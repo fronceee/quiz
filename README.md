@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Quiz Game
+
+This is my frist web using ReactJs.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
