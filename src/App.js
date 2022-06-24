@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import Start from "./Start"
+import Questions from "./Questions"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default function App() {
+    const [isStart, setIsStart] = React.useState(false)
+    
+    
+    function handleStart() {
+        setIsStart(prev => !prev)
+    }
+
+    
+    return (
+        <main>
+            {
+                isStart ?
+                <div className="question-bg" >
+                    <Questions handleClick={handleStart}/>
+                </div> 
+                : 
+                <div className="start-bg" >
+                    <Start handleClick={handleStart}/>
+                </div>
+            }
+           
+        </main>
+    )
 }
-
-export default App;
